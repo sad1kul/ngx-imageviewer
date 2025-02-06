@@ -1,4 +1,4 @@
-import { Component, Input, ViewChild, AfterViewInit, Renderer2, Inject, OnDestroy } from '@angular/core';
+import { Component, Input, ViewChild, AfterViewInit, Renderer2, Inject, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Subscription } from 'rxjs';
 
@@ -23,7 +23,9 @@ const MIN_TOOLTIP_WIDTH_SPACE = 500;
     :host { display: block }
     :host canvas { margin: 0 auto; display: block }
     [hidden] { display: none !important }
-  `]
+  `],
+  standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ImageViewerComponent implements AfterViewInit, OnDestroy {
 
@@ -63,7 +65,7 @@ export class ImageViewerComponent implements AfterViewInit, OnDestroy {
     this.resetImage();
   }
 
-  @ViewChild('imageContainer', {static: false}) canvasRef: any;
+  @ViewChild('imageContainer', { static: true }) canvasRef: any;
   //#endregion
 
   //#region Private properties

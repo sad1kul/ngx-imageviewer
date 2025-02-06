@@ -127,13 +127,13 @@ export abstract class ResourceLoader {
   public rendering = false;
 
   protected _image;
-  protected resourceChange = new Subject<string>();
+  protected resourceChange = new Subject<void>();
 
   abstract setUp();
   abstract loadResource();
 
   public resetViewport(canvasDim: Dimension): boolean {
-    if (!this.loaded || !canvasDim) { return; }
+    if (!this.loaded || !canvasDim) { return false; }
 
     const rotation = this.viewport ? this.viewport.rotation : 0;
     const inverted = toSquareAngle(rotation) / 90 % 2 !== 0;
@@ -155,6 +155,8 @@ export abstract class ResourceLoader {
     this.viewport.height = this._image.height * this.viewport.scale;
     this.viewport.x = (canvasDim.width - this.viewport.width) / 2;
     this.viewport.y = (canvasDim.height - this.viewport.height) / 2;
+
+    return true;
   }
 
   public draw(ctx, config: ImageViewerConfig, canvasDim: Dimension, onFinish) {
@@ -181,7 +183,7 @@ export abstract class ResourceLoader {
     onFinish(ctx, config, canvasDim);
   }
 
-  public onResourceChange() { return this.resourceChange.asObservable(); }
+  public onResourceChange(): Observable<void> { return this.resourceChange.asObservable(); }
 }
 
 export function toSquareAngle(angle: number) {

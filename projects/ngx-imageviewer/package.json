@@ -1,11 +1,12 @@
 {
-  "name": "@emazv72/ngx-imageviewer",
+  "name": "@sad1kul/ngx-imageviewer",
   "version": "0.0.0-development",
-  "author": "Hallyson Almeida <hallysonh@gmail.com>",
+  "author": "Sadikul Islam <sadik@sadikul.me>",
+  "description": "Angular 17 image and PDF viewer component. Forked from @emazv72/ngx-imageviewer and maintained with major Angular updates.",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/emazv72/ngx-imageviewer"
+    "url": "https://github.com/sad1kul/ngx-imageviewer"
   },
   "keywords": [
     "image",
@@ -13,12 +14,13 @@
     "angular",
     "pdf",
     "canvas",
-    "component"
+    "component",
+    "angular17"
   ],
-  "homepage": "https://github.com/emazv72/ngx-imageviewer#readme",
+  "homepage": "https://github.com/sad1kul/ngx-imageviewer/blob/master/README.md",
   "peerDependencies": {
-    "@angular/common": "^16.2.12",
-    "@angular/core": "^16.2.12"
+    "@angular/common": "^17.2.3",
+    "@angular/core": "^17.2.3"
   },
   "optionalDependencies": {
     "pdfjs-dist": "~3.11.174"

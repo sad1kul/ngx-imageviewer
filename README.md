@@ -1,14 +1,13 @@
-# Angular 16 - Canvas Image/PDF Viewer
+# Angular 17 - Canvas Image/PDF Viewer
 
-[![travis build](https://travis-ci.org/emazv72/ngx-imageviewer.svg?branch=master)](https://travis-ci.org/emazv72/ngx-imageviewer)
-[![Greenkeeper badge](https://badges.greenkeeper.io/emazv72/ngx-imageviewer.svg)](https://greenkeeper.io/)
-[![version](https://img.shields.io/npm/v/@emazv72/ngx-imageviewer.svg)](http://npm.im/@emazv72/ngx-imageviewer)
-[![MIT License](https://img.shields.io/github/license/emazv72/ngx-imageviewer.svg)](https://opensource.org/licenses/MIT)
+[![MIT License](https://img.shields.io/github/license/sad1kul/ngx-imageviewer.svg)](https://opensource.org/licenses/MIT)
+[![version](https://img.shields.io/npm/v/@sad1kul/ngx-imageviewer.svg)](http://npm.im/@sad1kul/ngx-imageviewer)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
-Forked from https://github.com/hallysonh/ngx-imageviewer
+Forked from https://github.com/emazv72/ngx-imageviewer and updated to support Angular 17. I will maintain major Angular updates only.
 
 This project generates a image/pdf viewer using canvas.
+
 
 ## Features
 
@@ -25,7 +24,7 @@ This project generates a image/pdf viewer using canvas.
 
 ## Demo
 
-Access a demo [here](https://emazv72.github.io/ngx-imageviewer/) or download this project and execute: `yarn && yarn start` or `npm install && npm run start` to self server it.
+Clone this repository and run `npm install && npm start` to serve it locally.
 
 ## Icon Font
 
@@ -35,7 +34,7 @@ You can use any icon font to render the button's icons. However, the default ico
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
 ```
 
-Optionaly, you can also install the font library via npm or yarn.
+Optionally, you can also install the font library via npm.
 
 > when using another icon font, you should provide a config object with the button icon mapping
 
@@ -44,7 +43,7 @@ Optionaly, you can also install the font library via npm or yarn.
 After import the module `ImageViewerModule`:
 
 ```typescript
-import { ImageViewerModule } from '@emazv72/ngx-imageviewer';
+import { ImageViewerModule } from '@sad1kul/ngx-imageviewer';
 
 @NgModule({
   imports: [ImageViewerModule],
@@ -62,7 +61,7 @@ Optionaly, you can provide the fields `width` and `height`. If you omit those va
 
 ## Add PDF Support
 
-To add PDF rendering support, you must first include `pdfjs` by running `yarn add pdfjs-dist@3.11.174` and add its reference in your `angular.json` file, like below:
+To add PDF rendering support, you must first include `pdfjs` by running `npm install pdfjs-dist@3.11.174` and add its reference in your `angular.json` file, like below:
 
 ```json
 {
@@ -83,7 +82,7 @@ To add PDF rendering support, you must first include `pdfjs` by running `yarn ad
 Optionaly, you can provide a custom configuration like below:
 
 ```typescript
-import { IMAGEVIEWER_CONFIG, ImageViewerConfig } from '@emazv72/ngx-imageviewer';
+import { IMAGEVIEWER_CONFIG, ImageViewerConfig } from '@sad1kul/ngx-imageviewer';
 ...
 const MY_IMAGEVIEWER_CONFIG: ImageViewerConfig = {
   buttonStyle: {
